@@ -18,7 +18,7 @@ class Popup{
         this.popup.classList+=["popup"]
 
         // popupの上にレイヤーを作成
-        this.popup.insertAdjacentHTML("beforebegin", '<span class="layer" id="' + id + '-layer"></span>' );
+        this.popup.insertAdjacentHTML("beforebegin", `<span class="layer" id="${id}-layer"></span>`);
         this.layer = document.getElementById(id + "-layer");
     }
 
