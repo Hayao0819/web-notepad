@@ -12,6 +12,7 @@ function save_on_storage(){
 // リセット
 function reset_storage() {
     localStorage.clear();
+    location.reload();
 }
 
 function restore_storage() {
