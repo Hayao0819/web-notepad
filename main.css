@@ -1,5 +1,5 @@
 /* 入力部分のCSS */
-#editor {
+.editor {
     /* 上部余白 */
     margin-top: 2%;
 
@@ -11,7 +11,7 @@
 
 }
 
-#editor-container{
+.editor-container{
     /* 中央揃え */
     display: inline-block;
     text-align: center;
