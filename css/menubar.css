@@ -1,6 +1,6 @@
 header {
-    background-color: gray;
-    color: white;
+    background-color: var(--main-black);
+    color: var(--main-white);
     
     width: 100vw;
     padding-top: 1%;
@@ -36,7 +36,7 @@ header {
 }
 
 .bar-item:active{
-    color: black;
+    color: var(--main-red);
     user-select: none;
 }
 

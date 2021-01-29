@@ -1,3 +1,10 @@
+/* 背景色を設定*/
+*{
+    --main-white: #ecf0f1;
+    --main-black: #2c3e50;
+    --main-red: #c0392b;
+}
+
 /* 入力部分のCSS */
 .editor {
     /* 上部余白 */
@@ -9,11 +16,23 @@
     /* 横幅を設定*/
     width: 90%;
 
-    /* 線を消す */
+    /* デフォの線を消す */
     outline: none;
     border: none;
 
+    /* 背景を白にする */
+    background-color: var(--main-white);
+
+    /* 線を引く */
+    border: solid 1px var(--main-black);
+    border-radius: 20px;
+
+    /* 内側の余白 */
+    /* 必ずpxで指定してください (JSで計算を行うため) */
+    padding: 25px;
+
 }
+
 .editor:always{
     /* 線を消す */
     outline: none;
@@ -27,3 +46,19 @@
     width: 100%;
 }
 
+main{
+    /* 背景を白にする */
+    background-color: var(--main-white);
+}
+
+.filename_box{
+    /* 背景を白にする */
+    background-color: var(--main-white);
+
+    /* デフォの線を消す */
+    outline: none;
+    border: none;
+
+    /* 下線を引く */
+    border-bottom: solid 1px var(--main-black);
+}
