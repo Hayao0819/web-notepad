@@ -9,6 +9,12 @@ function resize_editor(){
     var header = document.getElementById("header");
     var editor = document.getElementById("editor-" + current_tab);
 
+    // エディタに設定されているpaddingの値を取得
+    //参考: https://javascript.programmer-reference.com/js-width-parseint/
+    //参考: https://gray-code.com/javascript/get-css-applied-to-html-element/
+    var editor_padding = parseInt(getComputedStyle(editor).getPropertyValue("padding"));
+
+
     //==============高さ==============\\
     // ヘッダーの高さ
     var header_height = header.clientHeight;
@@ -17,7 +23,7 @@ function resize_editor(){
     // 追加の余白の高さ (ウィンドウの高さの10%)
     var additional_height = window_height * 0.1;
     // 高さを計算して確定
-    var editor_height = window_height - header_height - additional_height;
+    var editor_height = window_height - header_height - additional_height - editor_padding * 2;
     // 高さを設定
     editor.style.height = editor_height + "px";
 
@@ -26,7 +32,7 @@ function resize_editor(){
     // ウィンドウの横幅
     var window_width = window.innerWidth;
     // 高さを計算して確定（ウィンドウの横幅の90%）
-    var editor_width = window_width * 0.9
+    var editor_width = window_width * 0.9 - editor_padding * 2;
     // 横幅を設定（ウィンドウの横幅の90%）
     editor.style.width = editor_width + "px";
 

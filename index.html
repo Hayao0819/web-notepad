@@ -33,12 +33,10 @@
 
             <form id="tab-buttons">
                 <label class="tab_item" for="tab-1" onclick="enable_tab(1)"><input id="tab-1" type="radio" name="tab_item" checked>エディター1</label>
-                <label class="tab_item" for="tab-2" onclick="enable_tab(2)"><input id="tab-2" type="radio" name="tab_item">エディター2</label>
             </form>
 
             <span id="tab-editors">
-                <div id="editor-1-container"><form><input type="text" id="editor-1-name"><br><textarea class="editor" id="editor-1" placeholder="ここに入力"></textarea></form></div>
-                <div id="editor-2-container"><form><input type="text" id="editor-2-name"><br><textarea class="editor" id="editor-2" placeholder="ここに入力"></textarea></form></div>
+                <div id="editor-1-container"><form><input type="text" id="editor-1-name" class="filename_box" placeholder="ファイル名を入力"><br><textarea class="editor" id="editor-1" placeholder="ここに入力"></textarea></form></div>
             </span>
 
         </div>

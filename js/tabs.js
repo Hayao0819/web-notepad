@@ -1,4 +1,4 @@
-var editors=2;
+var editors=1;
 
 window.addEventListener("load", function(){
     enable_tab(1);
@@ -40,7 +40,7 @@ function add_tab() {
 
     // エディタを生成
     var tab_editors = document.getElementById("tab-editors");
-    var new_editor  = `<div id="editor-${editors}-container"><form><input type="text" id="editor-${editors}-name"><br><textarea class="editor" id="editor-${editors}" placeholder="ここに入力"></textarea></form></div>`;
+    var new_editor  = `<div id="editor-${editors}-container"><form><input type="text" id="editor-${editors}-name" class="filename_box" placeholder="ファイル名を入力"><br><textarea class="editor" id="editor-${editors}" placeholder="ここに入力"></textarea></form></div>`;
     tab_editors.insertAdjacentHTML("beforeend", new_editor);
 
     // 切り替え
