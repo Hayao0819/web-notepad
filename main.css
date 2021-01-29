@@ -1,0 +1,19 @@
+/* 入力部分のCSS */
+#editor {
+    /* 上部余白 */
+    margin-top: 2%;
+
+    /* リサイズ禁止 */
+    resize: none;
+
+    /* 横幅を設定*/
+    width: 90%;
+
+}
+
+#editor-container{
+    /* 中央揃え */
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}

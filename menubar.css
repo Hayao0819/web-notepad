@@ -1,0 +1,45 @@
+header {
+    background-color: gray;
+    color: white;
+    
+    width: 100vw;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+* { 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+.bar-item, .bar-logo{
+    text-align: center;
+    list-style: none;
+    
+    margin-left: 1%;
+}
+
+.bar-logo{
+    /* ロゴのフォント設定*/
+    font-weight: 900;
+    font-size: larger;
+
+    /* flexで右寄せ */
+    margin-right: auto;
+}
+.bar-item{
+    /* ボタンの右の間隔 */
+    margin-right: 1%;
+}
+
+#bar-container{
+    /* 
+    flexboxでいい感じに配置する
+    参考サイト
+    https://guillemot.jp/web/365
+    https://knowledge.cpi.ad.jp/tech/169/
+    */
+
+    display: flex;
+    justify-content: space-between;
+}

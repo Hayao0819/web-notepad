@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Notepad</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./menubar.css">
+</head>
+<body>
+    <header id="header">
+        <ul id="bar-container">
+            <li class="bar-logo">はやおのうぇぶのーとぱっど</li>
+            <li class="bar-item" onclick="clicktest()">保存</li>
+            <li class="bar-item" onclick="clicktest()">開く</li>
+            <li class="bar-item" onclick="clicktest()">使い方</li>
+            <li class="bar-item" onclick="clicktest()">ヘルプ</li>
+        </ul>
+    </header>
+    <main>
+        <form>
+            <span id="editor-container">
+                <textarea id="editor"></textarea>
+            </span>
+        </form>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>
