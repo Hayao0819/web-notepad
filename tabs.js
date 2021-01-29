@@ -17,7 +17,8 @@ function enable_tab(number) {
     document.getElementById("tab-" + number).checked = true;
 
     // それ以外のエディターを削除
-    for (var current = 1; current < editors; current++){
+    for (var current = 1; current <= editors; current++){
+        //console.log(`current=${current} editors=${editors} number=${number}`)
         if (current != number) {
             document.getElementById("editor-" + current + "-container").style.display = "none";
         }
@@ -41,4 +42,7 @@ function add_tab() {
     var tab_editors = document.getElementById("tab-editors");
     var new_editor  = `<div id="editor-${editors}-container"><form><input type="text" id="editor-${editors}-name"><br><textarea class="editor" id="editor-${editors}" placeholder="ここに入力"></textarea></form></div>`;
     tab_editors.insertAdjacentHTML("beforeend", new_editor);
+
+    // 切り替え
+    enable_tab(editors);
 }
