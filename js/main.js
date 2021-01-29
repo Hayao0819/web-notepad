@@ -86,3 +86,6 @@ function save_to_txt() {
     a.click();
 }
 
+function open_file() {
+    alert("この機能はまだ実装されていません。ごめんね");
+}
