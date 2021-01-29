@@ -1,5 +1,3 @@
-var editors=1;
-
 window.addEventListener("load", function(){
     enable_tab(1);
 }, false);
@@ -49,4 +47,7 @@ function add_tab() {
 
     // 切り替え
     enable_tab(editors);
+
+    //タブ数保存
+    save_editor_number();
 }
