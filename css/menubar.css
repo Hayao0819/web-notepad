@@ -1,11 +1,27 @@
-header {
-    background-color: var(--main-black);
-    color: var(--main-white);
-    
+header{
     width: 100vw;
     padding-top: 1%;
     padding-bottom: 1%;
+    background-color: var(--main-black);
+    color: var(--main-white);
 }
+
+#tab-buttons{
+    width: 100vw;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: var(--sub-black);
+    color: var(--main-white);
+}
+
+.tab_item > input[type=radio]{
+    display: none;
+}
+
+.selected_tab{
+    color: var(--main-red) !important;
+}
+
 
 * { 
     margin: 0px; 
@@ -27,6 +43,7 @@ header {
     /* flexで右寄せ */
     margin-right: auto;
 }
+
 .bar-item{
     /* ボタンの右の間隔 */
     margin-right: 1%;
@@ -35,6 +52,7 @@ header {
     cursor: pointer;
 }
 
+/* クリックされたときの色 */
 .bar-item:active{
     color: var(--main-red);
     user-select: none;
@@ -51,3 +69,4 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
