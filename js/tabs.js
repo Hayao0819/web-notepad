@@ -12,6 +12,7 @@ function enable_tab(number) {
 
     // 選択されてるエディターを取得して表示
     document.getElementById("editor-" + number + "-container").style.display = "block";
+    TLN.append_line_numbers("editor-" + number);
 
     //タブにチェックを入れる
     document.getElementById("tab-" + number).checked = true;
