@@ -1,6 +1,5 @@
-function clicktest() {
-    console.log("クリックされたよ");
-}
+// 変数の設定
+var current_tab = 1;
 
 // エディタの高さを設定
 window.addEventListener("resize", resize_editor, false);
@@ -8,7 +7,7 @@ window.addEventListener("load", resize_editor, false);
 function resize_editor(){
     // 要素の取得
     var header = document.getElementById("header");
-    var editor = document.getElementById("editor-1");
+    var editor = document.getElementById("editor-" + current_tab);
 
     //==============高さ==============\\
     // ヘッダーの高さ
@@ -31,12 +30,18 @@ function resize_editor(){
     // 横幅を設定（ウィンドウの横幅の90%）
     editor.style.width = editor_width + "px";
 
-    
+
     return 0;
 }
 
 
 // 読み込み時にエディターにフォーカス
 window.onload = function() {
-    document.getElementById("editor").focus();
+    document.getElementById("editor-" + current_tab).focus();
 };
+
+
+// クリックテスト
+function clicktest() {
+    console.log("クリックされたよ");
+}

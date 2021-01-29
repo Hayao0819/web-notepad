@@ -11,7 +11,7 @@
 
 }
 
-.editor-container{
+#tab-editors{
     /* 中央揃え */
     display: inline-block;
     text-align: center;

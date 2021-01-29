@@ -19,13 +19,21 @@
         </ul>
     </header>
     <main>
+        <div class="tabs">
 
-        <form>
-            <span class="editor-container">
-                <textarea class="editor" id="editor-1"></textarea>
+            <form id="tab-buttons">
+                <label class="tab_item" for="tab-1" onclick="enable_tab(1)"><input id="tab-1" type="radio" name="tab_item" checked>エディター1</label>
+                <label class="tab_item" for="tab-2" onclick="enable_tab(2)"><input id="tab-2" type="radio" name="tab_item">エディター2</label>
+            </form>
+
+            <span id="tab-editors">
+                <div id="editor-1-container"><form><textarea class="editor" id="editor-1"></textarea></form></div>
+                <div id="editor-2-container"><form><textarea class="editor" id="editor-2"></textarea></form></div>
             </span>
-        </form>
+
+        </div>
     </main>
     <script src="./main.js"></script>
+    <script src="./tabs.js"></script>
 </body>
 </html>
