@@ -9,6 +9,15 @@
     /* 横幅を設定*/
     width: 90%;
 
+    /* 線を消す */
+    outline: none;
+    border: none;
+
+}
+.editor:always{
+    /* 線を消す */
+    outline: none;
+    border: none;
 }
 
 #tab-editors{
