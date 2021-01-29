@@ -65,4 +65,7 @@ main{
 
     /* 下線を引く */
     border-bottom: solid 1px var(--main-black);
+
+    /* 横幅を指定 */
+    width: 50%;
 }
