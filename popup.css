@@ -26,8 +26,8 @@
     margin: auto;
 
     /* 幅と高さを設定 */
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
 
     /* 背景を設定 */
     background-color: white;
@@ -37,4 +37,10 @@
 
     /* テキストを中央揃え */
     text-align: center;
+
+    /*はみ出たときの処理 */
+    overflow: scroll;
+
+    /* 行間 */
+    line-height: 350%;
 }
