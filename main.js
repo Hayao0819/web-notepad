@@ -45,3 +45,33 @@ window.onload = function() {
 function clicktest() {
     console.log("クリックされたよ");
 }
+
+
+// 内容を保存
+// 参考: https://kakkoyakakko2.hatenablog.com/entry/2019/08/14/190000
+function save_to_txt() {
+    // 内容を取得
+    var text = document.getElementById("editor-" + current_tab).value;
+
+    //ファイル名を取得
+    var name = document.getElementById("editor-" + current_tab + "-name").value;
+
+    // 内容が空なら終了
+    if (!text){
+        return;
+    }
+
+    // ファイル名が空ならデフォルト値を仕様
+    if (!name){
+        name = "notitle.txt"
+    }
+
+    //文字列をblobに変換
+    var blob = new Blob([text], {type: "text/plane"});
+
+    //ダウンロード用のaタグを生成
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    a.click();
+}
