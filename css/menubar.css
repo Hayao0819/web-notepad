@@ -19,9 +19,15 @@ header{
 }
 
 .selected_tab{
-    color: var(--main-red) !important;
+    color: var(--sub-red) !important;
 }
 
+.tab_item{
+    margin-left: 1%;
+
+    /* マウスの形状を変える*/
+    cursor: pointer;
+}
 
 * { 
     margin: 0px; 

@@ -16,11 +16,15 @@ function enable_tab(number) {
     //タブにチェックを入れる
     document.getElementById("tab-" + number).checked = true;
 
+    //色を赤にする
+    document.getElementById("tab-label-" + number).classList.add("selected_tab");
+
     // それ以外のエディターを削除
     for (var current = 1; current <= editors; current++){
         //console.log(`current=${current} editors=${editors} number=${number}`)
         if (current != number) {
             document.getElementById("editor-" + current + "-container").style.display = "none";
+            document.getElementById("tab-label-" + current).classList.remove("selected_tab");
         }
     }
 
@@ -35,7 +39,7 @@ function add_tab() {
 
     // ボタンを生成
     var tab_buttons = document.getElementById("tab-buttons");
-    var new_button  = `<label class="tab_item" for="tab-${editors}" onclick="enable_tab(${editors})"><input id="tab-${editors}" type="radio" name="tab_item">エディター${editors}</label>`;
+    var new_button  = `<label class="tab_item" for="tab-${editors}" onclick="enable_tab(${editors})" id="tab-label-${editors}"><input id="tab-${editors}" type="radio" name="tab_item">エディター${editors}</label>`;
     tab_buttons.insertAdjacentHTML("beforeend", new_button);
 
     // エディタを生成
