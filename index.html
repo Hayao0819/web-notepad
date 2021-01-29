@@ -24,7 +24,7 @@
             <li class="bar-item" onclick="clicktest()">新規作成</li>
             <li class="bar-item" onclick="save_to_txt()">保存</li>
             <li class="bar-item" onclick="open_file()">開く</li>
-            <li class="bar-item" onclick="clicktest()">使い方</li>
+            <li class="bar-item" onclick="usage.open()">使い方</li>
             <li class="bar-item" onclick="about_hayao.open()">作者について</li>
         </ul>
     </header>
@@ -51,6 +51,16 @@
         <p>最近HTMLとJSとCSSを勉強し始めた高校生</p>
         <p>基本的にツイ廃でArch Linuxが大好き</p>
         <form><input type="button" onclick="about_hayao.close()" value="閉じる"></form>
+    </span>
+
+    <!-- 使い方のポップアップ -->
+    <span id="usage">
+        <h1>使い方</h1>
+        <p>上のテキストボックスにファイル名を入力してください（入力しなくても使えます）</p>
+        <p>下に好きなテキストを入力してください</p>
+        <p>上のバーにある「保存」でデータをダウンロードできます</p>
+        <p>バーの下に有るラジオボタンでエディタを切り替えることができます</p>
+        <form><input type="button" onclick="usage.close()" value="閉じる"></form>
     </span>
 
     <!-- JavaScript を読み込む -->

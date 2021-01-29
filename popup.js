@@ -34,4 +34,5 @@ class Popup{
 }
 
 about_hayao = new Popup("about-hayao");
+usage = new Popup("usage");
 
