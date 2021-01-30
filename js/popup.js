@@ -15,7 +15,7 @@ class Popup{
 
         // idで指定されたHTMLを取得
         this.popup = document.getElementById(id);
-        this.popup.classList+=["popup"]
+        //this.popup.classList+=["popup"]
 
         // popupの上にレイヤーを作成
         this.popup.insertAdjacentHTML("beforebegin", `<span class="layer" id="${id}-layer"></span>`);
@@ -23,7 +23,7 @@ class Popup{
         //console.log(this.popup.innerHTML);
 
         //閉じるボタンを作成
-        this.popup.insertAdjacentHTML("beforeend", `<form><input type="button" value="閉じる"></form>`);
+        this.popup.insertAdjacentHTML("beforeend", `<input type="button" value="閉じる">`);
         this.popup.addEventListener("click", () => this.close(this),false);
         //console.log(this.close);
     }
@@ -40,6 +40,17 @@ class Popup{
     }
 }
 
-about_hayao = new Popup("about_hayao");
-usage = new Popup("usage");
-reset_confirm = new Popup("reset");
+//about_hayao = new Popup("about_hayao");
+//usage = new Popup("usage");
+//reset_confirm = new Popup("reset");
+window.addEventListener("load", generate_popup,false);
+function generate_popup() {
+    popup_list = Array.from(document.getElementsByClassName("popup"));
+    popup_list.forEach(function(_popup){
+        var _create_popup_js_code=`${_popup.dataset.funcname} = new Popup("${_popup.id}");`
+        eval(_create_popup_js_code);
+        //console.log(_create_popup_js_code);
+
+    });
+}
+
