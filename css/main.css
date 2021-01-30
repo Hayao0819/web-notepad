@@ -1,13 +1,15 @@
 /* 背景色を設定*/
 /* colorcode https://www.materialui.co/flatuicolors */
 *{
-    --main-white: #ecf0f1;
-    --main-black: #2c3e50;
-    --sub-black : #34495e;
-    --sub2-gray : #263238;
-    --main-red  : #c0392b;
-    --sub-red   : #e74c3c;
-    --main-gray : #bdc3c7; 
+    --main-white : #ecf0f1;
+    --main-black : #2c3e50;
+    --sub-black  : #34495e;
+    --sub2-black : #263238;
+    --main-red   : #c0392b;
+    --sub-red    : #e74c3c;
+    --main-gray  : #bdc3c7;
+
+    --editor-background: var(--sub2-black);
 }
 
 /* 入力部分のCSS */
@@ -26,7 +28,7 @@
     border: none;
 
     /* 背景を白にする */
-    background-color: var(--main-white);
+    background-color: var(--editor-background);
 
     /* 線を引く */
     border: solid 1px var(--main-black);
@@ -52,13 +54,13 @@
 }
 
 main{
-    /* 背景を白にする */
-    background-color: var(--main-white);
+    /* 背景を設定する */
+    background-color: var(--editor-background);
 }
 
 .filename_box{
-    /* 背景を白にする */
-    background-color: var(--main-white);
+    /* 背景を設定する */
+    background-color: var(--editor-background);
 
     /* デフォの線を消す */
     outline: none;
