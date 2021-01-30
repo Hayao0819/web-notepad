@@ -1,7 +1,3 @@
-window.addEventListener("load", function(){
-    enable_tab(1);
-}, false);
-
 // 引数に渡されたタブを有効化
 function enable_tab(number) {
     if (number == null){
@@ -17,22 +13,20 @@ function enable_tab(number) {
     //色を赤にする
     document.getElementById("tab-label-" + number).classList.add("selected_tab");
 
-    // それ以外のエディターを削除
-    for (var current = 1; current <= editors; current++){
-        //console.log(`current=${current} editors=${editors} number=${number}`)
-        if (current != number) {
-            document.getElementById("editor-" + current + "-container").style.display = "none";
-            document.getElementById("tab-label-" + current).classList.remove("selected_tab");
-        }
-    }
-
     // 設定値を更新
     current_tab = number;
 
+    // エディタを更新
+    update_editors();
+
     // エディタサイズを更新
     resize_editor();
+
+    // ストレージの値を更新
+    save_editor_number();
 }
 
+// タブを追加
 function add_tab() {
     // エディター数を更新
     editors++;
@@ -52,4 +46,19 @@ function add_tab() {
 
     //タブ数保存
     save_editor_number();
+
+    // エディタを更新
+    update_editors();
+}
+
+// エディタを再描写
+function update_editors() {
+    // 選択されていないエディターを削除
+    for (var i = 1; i <= editors; i++){
+        //console.log(`current=${current} editors=${editors} number=${number}`)
+        if (i != current_tab) {
+            document.getElementById("editor-" + i + "-container").style.display = "none";
+            document.getElementById("tab-label-" + i).classList.remove("selected_tab");
+        }
+    }
 }

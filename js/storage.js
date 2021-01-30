@@ -17,16 +17,10 @@ function reset_storage() {
 }
 
 function restore_storage() {
-    // ストレージを元にエディターを生成
-    /*
-    Object.keys(localStorage).forEach(function(key){
-        if (key.match("^editor-.*")){
-            console.log(key)
-            add_tab();
-        }
-    });
-    */
+    // 最後に選択されてた値を取得して変数にバックアップ
+    var _last_selected = localStorage.getItem("last_selected");
 
+    // エディタ数を取得しその回数だけタブを生成
     var storage_editors = localStorage.getItem("editors");
     for (var i = 0; i < storage_editors - 1; i++){
         add_tab();
@@ -38,9 +32,17 @@ function restore_storage() {
         document.getElementById("editor-" + editor).value = localStorage.getItem("editor-" + editor);
         document.getElementById("editor-" + editor + "-name").value = localStorage.getItem("editor-" + editor + "-name");
     }
+
+    // 最後に選択されてたタブに移動
+    if (_last_selected){
+        enable_tab(_last_selected);
+    }else{
+        enable_tab(1);
+    }
 }
 
 
 function save_editor_number() {
     localStorage.setItem("editors", editors);
+    localStorage.setItem("last_selected", current_tab);
 }
