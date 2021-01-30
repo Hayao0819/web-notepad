@@ -1,8 +1,15 @@
 header{
+    /* 横幅を画面いっぱいにする */
     width: 100vw;
+
+    /* 上下の空白 */
     padding-top: 0.5%;
     padding-bottom: 0.5%;
+
+    /* 背景色 */
     background-color: var(--main-black);
+
+    /* 文字色 */
     color: var(--main-white);
 }
 
@@ -43,8 +50,14 @@ header{
 
     /* マウスの形状を変える*/
     cursor: pointer;
-    
-    margin-left: 1%;
+
+    /* 左に空白を作る */
+    padding-left: 2%;
+}
+
+.description{
+    /* 左に空白を作る */
+    padding-left: 2%;
 }
 
 .bar-logo{
