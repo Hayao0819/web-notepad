@@ -89,10 +89,17 @@ function save_to_txt() {
 
 // 開くダイアログ
 function upload_file() {
+    // フォームを作成
+    var form = document.createElement("form");
+    form.method = "POST";
+
     // ファイル選択ダイアログを生成
     var file_select = document.createElement("input");
     file_select.type = "file";
     file_select.id = "file_select";
+
+    // フォームの中に選択ダイアログを入れる
+    form.innerHTML = file_select;
 
     //ファイル選択ダイアログを実行
     file_select.click();
