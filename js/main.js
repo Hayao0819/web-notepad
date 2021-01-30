@@ -86,6 +86,43 @@ function save_to_txt() {
     a.click();
 }
 
-function open_file() {
-    alert("この機能はまだ実装されていません。ごめんね");
+
+// 開くダイアログ
+function upload_file() {
+    // ファイル選択ダイアログを生成
+    var file_select = document.createElement("input");
+    file_select.type = "file";
+    file_select.id = "file_select";
+
+    //ファイル選択ダイアログを実行
+    file_select.click();
+
+    // ファイルが選択されたときに関数を実行
+    file_select.addEventListener("change", function() {
+        //選択されたファイルをselected_files配列に代入
+        selected_files = file_select.files;
+
+        // 何も選択されていなかったら終了
+        if ( selected_files.length == 0){
+            return;
+        };
+
+        // readerを作成
+        var reader = new FileReader();
+        
+        // テキストとして読み込み
+        reader.readAsText(selected_files[0]);
+
+        // ファイル名を取得
+        var filename = selected_files[0].name;
+
+        // 読み込まされたときに関数を実行
+        reader.onload = function() {
+            // 内容をエディターに反映
+            document.getElementById("editor-" + current_tab).value = reader.result;
+
+            // ファイル名をエディターに反映
+            document.getElementById(`editor-${current_tab}-name`).value = filename;
+        }
+    }, false);
 }
