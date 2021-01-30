@@ -24,7 +24,8 @@
             <li class="bar-item" onclick="add_tab()">新規作成</li>
             <li class="bar-item" onclick="save_to_txt()">保存</li>
             <li class="bar-item" onclick="upload_file()">開く</li>
-            <li class="bar-item" onclick="reset_confirm.open()">リセット</li>
+            <li class="bar-item" onclick="delete_confirm.open()">消す</li>
+            <li class="bar-item" onclick="reset_confirm.open()">全て消す</li>
             <li class="bar-item" onclick="usage.open()">使い方</li>
             <li class="bar-item" onclick="about_hayao.open()">作者について</li>
         </ul>
@@ -73,7 +74,14 @@
     <span id="reset" class="popup" data-funcname="reset_confirm">
         <h1>警告</h1>
         <p>全てのデータが削除されます。よろしいですか？</p>
-        <input type="button" onclick="reset_storage()" value="リセット"><br>
+        <input type="button" onclick="reset_storage()" value="全て消す"><br>
+    </span>
+
+    <!-- 削除のポップアップ-->
+    <span id="delete" class="popup" data-funcname="delete_confirm">
+        <h1>警告</h1>
+        <p>現在のエディタの内容が削除されます。よろしいですか？</p>
+        <input type="button" onclick="reset_storage()" value="消す"><br>
     </span>
 
     <!-- JavaScript を読み込む -->
