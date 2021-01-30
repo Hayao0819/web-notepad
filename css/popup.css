@@ -40,7 +40,7 @@
     border-radius: 20px;
 
     /* テキストを中央揃え */
-    text-align: center;
+    /*text-align: center;*/
 
     /*はみ出たときの処理 */
     overflow: scroll;
@@ -87,12 +87,6 @@ input[type="button"]{
     /* 中央に配置 */
     margin: 0 auto;
 
-    /* サイズを固定 */
-    width: 10%;
-    min-width: 60px;
-    min-height: 45px;
-    display: inline-block;
-
     /*カーソルを変更*/
     cursor: pointer;
 }
@@ -119,6 +113,9 @@ input[type="button"]:active{
 
     /*重なりの優先順位*/
     z-index: 100;
+
+    /* 中央揃え */
+    text-align: center;
 }
 
 
