@@ -93,7 +93,7 @@
     margin-top: 5%;
 
     /* 背景色を設定 */
-    background-color: var(--sub2-gray);
+    background-color: var(--sub2-black);
 
     /*重なりの優先順位*/
     z-index: 100;
