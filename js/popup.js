@@ -29,7 +29,7 @@ class Popup{
         this.popup.appendChild(_container);
 
         //閉じるボタンを作成
-        _container.insertAdjacentHTML("beforeend", `<input type="button" value="閉じる" class="close_button">`);
+        _container.insertAdjacentHTML("beforeend", `<p><input type="button" value="閉じる" class="close_button"></p>`);
         this.close_button = this.popup.getElementsByClassName("close_button")[0];
         this.close_button.addEventListener("click", () => this.close(this),false);
         //console.log(this.close);
