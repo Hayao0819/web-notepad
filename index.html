@@ -44,8 +44,13 @@
             <span id="tab-editors">
                 <div id="editor-1-container">
                     <form>
-                        <input type="text" id="editor-1-name" class="filename_box" placeholder="ファイル名を入力"><br>
-                        <textarea class="editor" id="editor-1" placeholder="ここに入力"></textarea>
+                        <span class="settings">
+                            <input type="text" id="editor-1-name" class="filename_box" placeholder="ファイル名を入力">
+                            <select name="encoding" class="encoding" id="editor-1-encoding"></select>
+                        </span>
+                        <span class="editors">
+                            <textarea class="editor" id="editor-1" placeholder="ここに入力"></textarea>
+                        </span>
                     </form>
                 </div>
             </span>

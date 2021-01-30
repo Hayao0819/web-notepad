@@ -33,12 +33,27 @@ function add_tab() {
 
     // ボタンを生成
     var tab_buttons = document.getElementById("tab-buttons");
-    var new_button  = `<label class="tab_item" for="tab-${editors}" onclick="enable_tab(${editors})" id="tab-label-${editors}"><input id="tab-${editors}" type="radio" name="tab_item">エディター${editors}</label>`;
+    var new_button  = `
+    <label class="tab_item" for="tab-${editors}" onclick="enable_tab(${editors})" id="tab-label-${editors}">
+        <input id="tab-${editors}" type="radio" name="tab_item">エディター${editors}
+    </label>
+    `;
     tab_buttons.insertAdjacentHTML("beforeend", new_button);
 
     // エディタを生成
     var tab_editors = document.getElementById("tab-editors");
-    var new_editor  = `<div id="editor-${editors}-container"><form><input type="text" id="editor-${editors}-name" class="filename_box" placeholder="ファイル名を入力"><br><textarea class="editor" id="editor-${editors}" placeholder="ここに入力"></textarea></form></div>`;
+    var new_editor  = `
+    <div id="editor-${editors}-container">
+        <form>
+            <span class="settings">
+                <input type="text" id="editor-${editors}-name" class="filename_box" placeholder="ファイル名を入力">
+                <select name="encoding" class="encoding" id="editor-${editors}-encoding"></select>
+            </span>
+            <span class="editors">
+                <textarea class="editor" id="editor-${editors}" placeholder="ここに入力"></textarea>
+            <span class="editors">
+        </form>
+    </div>`;
     tab_editors.insertAdjacentHTML("beforeend", new_editor);
 
     // 切り替え

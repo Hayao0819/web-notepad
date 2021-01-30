@@ -10,6 +10,9 @@
     --main-gray  : #bdc3c7;
 
     --editor-background: var(--sub2-black);
+
+    --editor-font-size: 1.2em;
+    
 }
 
 /* 入力部分のCSS */
@@ -38,6 +41,8 @@
     /* 文字色を指定 */
     color: var(--main-white);
 
+    /* 文字サイズを指定 */
+    font-size: var(--editor-font-size);
 }
 
 .editor:always{
@@ -46,11 +51,15 @@
     border: none;
 }
 
-#tab-editors{
+.editors{
     /* 中央揃え */
     display: inline-block;
     text-align: center;
     width: 100%;
+}
+
+.settings{
+    margin-left: 5%;
 }
 
 html{
@@ -70,7 +79,13 @@ html{
     border-bottom: solid 1px var(--main-black);
 
     /* 横幅を指定 */
-    width: 50%;
+    width: 45%;
+
+    /* 左寄せ */
+    /*
+    display:block;
+    margin-left: 5%;
+    */
 
     /* 上下に余白を追加 */
     margin-top: 1%;
@@ -78,4 +93,7 @@ html{
 
     /* 文字色を設定 */
     color: var(--main-white);
+
+    /* 文字サイズを指定 */
+    font-size: 1em;
 }

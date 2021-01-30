@@ -119,9 +119,13 @@ function upload_file() {
 
         // readerを作成
         var reader = new FileReader();
+
+        // 現在選択されているエンコーディングを取得
+        var encoding = document.getElementById("editor-" + current_tab + "-encoding").value;
+
         
         // テキストとして読み込み
-        reader.readAsText(selected_files[0]);
+        reader.readAsText(selected_files[0], encoding);
 
         // ファイル名を取得
         var filename = selected_files[0].name;
@@ -149,3 +153,17 @@ function open_tab(n){
         add_tab();
     }
 }
+
+
+// 文字コード一覧を生成
+window.addEventListener("load",create_encode_list,false);
+encoding_list=["utf-8","shift-jis","unicode"];
+function create_encode_list() {
+    selectlist = Array.from(document.getElementsByClassName("encoding"));
+    selectlist.forEach(function(_select){
+        encoding_list.forEach(function(_encoding){
+            _select.insertAdjacentHTML("beforeend",`<option value="${_encoding}">${_encoding}</option>`);
+        });
+    });
+}
+
