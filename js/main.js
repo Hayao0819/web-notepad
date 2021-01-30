@@ -27,7 +27,6 @@ function resize_editor(){
     var window_height  = window.innerHeight;
     // ファイル名の高さ
     var namebar_height = namebar.clientHeight;
-    console.log(namebar_height);
     // 追加の余白の高さ (ウィンドウの高さの10%)
     var additional_height = window_height * 0.1;
     // 高さを計算して確定
