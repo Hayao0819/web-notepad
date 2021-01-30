@@ -20,10 +20,16 @@ class Popup{
         // popupの上にレイヤーを作成
         this.popup.insertAdjacentHTML("beforebegin", `<span class="layer" id="${id}-layer"></span>`);
         this.layer = document.getElementById(id + "-layer");
-        //console.log(this.popup.innerHTML);
+        
+        // idで指定されたHTMLに全体を覆う
+        var _container = document.createElement("span");
+        _container.classList.add("popup-container");
+        _container.innerHTML = this.popup.innerHTML;
+        this.popup.innerHTML = null;
+        this.popup.appendChild(_container);
 
         //閉じるボタンを作成
-        this.popup.insertAdjacentHTML("beforeend", `<input type="button" value="閉じる" class="close_button">`);
+        _container.insertAdjacentHTML("beforeend", `<input type="button" value="閉じる" class="close_button">`);
         this.close_button = this.popup.getElementsByClassName("close_button")[0];
         this.close_button.addEventListener("click", () => this.close(this),false);
         //console.log(this.close);
