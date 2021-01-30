@@ -61,3 +61,8 @@ function generate_popup() {
     });
 }
 
+/*
+window.addEventListener("load",function(){
+    save.open();
+});
+*/

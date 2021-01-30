@@ -24,7 +24,8 @@
         <ul id="bar-container">
             <li class="bar-logo" onclick="location.reload()">はやおのうぇぶのーとぱっど</li>
             <li class="bar-item" onclick="add_tab()">新規作成</li>
-            <li class="bar-item" onclick="save_to_txt()">保存</li>
+            <li class="bar-item" onclick="save_to_txt()">ダウンロード</li>
+            <li class="bar-item" onclick="save_other()">保存</li>
             <li class="bar-item" onclick="upload_file()">開く</li>
             <li class="bar-item" onclick="delete_confirm.open()">消す</li>
             <li class="bar-item" onclick="reset_confirm.open()">全て消す</li>
@@ -92,10 +93,64 @@
         <input type="button" onclick="reset_storage()" value="消す"><br>
     </span>
 
+    <!-- 保存のポップアップ -->
+    <span id="save" class="popup" data-funcname="save">
+        <h1>保存</h1>
+        <style>
+            .save_item:not(input[type="button"]){
+                min-width: 50%;
+                display: flex;
+                line-height: 150%;
+                margin-bottom: 5%;
+            }
+            .save_item > h2 {
+                width: 40%;
+            }
+
+            .save_item > p {
+                width: 35%;
+            }
+
+            .save_container{
+                margin-top: 3%;
+                text-align: center;
+            }
+
+        </style>
+        <div class="save_container">
+            <div class="save_item">
+                <h2>ダウンロード</h2>
+                <p>そのままプレーンテキストをダウンロード</p>
+                <input type="button" value="ダウンロード" onclick="save_to_txt()">
+            </div>
+            <div class="save_item">
+                <h2>DropBox</h2>
+                <p>天下のM$様のサーバのディスクに保存します</p>
+                <input type="button" value="保存" onclick="Unimplemented()">
+            </div>
+            <div class="save_item">
+                <h2>Twitter</h2>
+                <p>ツイ廃ならメモをツイートしたほうが速いのでは</p>
+                <input type="button" value="ツイート" onclick="Unimplemented()">
+            </div>
+            <div class="save_item">
+                <h2>ローカルストレージ</h2>
+                <p>
+                    HTML5のlocalStorage機能を利用して保存します<br>
+                    まぁ自動で保存されてるのでわざわざここ押さなくても大丈夫
+                </p>
+                
+                <input type="button" value="保存" onclick="save_on_storage()">
+            </div>
+        </div>
+    </span>
+
     <!-- JavaScript を読み込む -->
     <script src="./js/main.js"></script>
     <script src="./js/tabs.js"></script>
     <script src="./js/storage.js"></script>
     <script src="./js/popup.js"></script>
+
+
 </body>
 </html>

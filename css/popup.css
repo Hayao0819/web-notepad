@@ -30,8 +30,8 @@
     margin: auto;
 
     /* 幅と高さを設定 */
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
 
     /* 背景を設定 */
     background-color: var(--main-black);

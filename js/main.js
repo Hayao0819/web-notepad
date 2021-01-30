@@ -167,3 +167,14 @@ function create_encode_list() {
     });
 }
 
+//未実装
+function Unimplemented() {
+    alert("この機能はまだ実装されていません。ごめんね。");
+}
+
+//保存ダイアログを開く
+function save_other(){
+    if(document.getElementById("editor-" + current_tab).value){
+        save.open();
+    }
+}
