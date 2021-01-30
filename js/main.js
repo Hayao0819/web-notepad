@@ -133,3 +133,8 @@ function upload_file() {
         }
     }, false);
 }
+
+// 選択されてるエディタを空にする
+function delete_editor(){
+    document.getElementById("editor-" + current_tab).value = null;
+}
