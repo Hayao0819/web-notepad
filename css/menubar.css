@@ -1,27 +1,31 @@
 header{
     width: 100vw;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     background-color: var(--main-black);
     color: var(--main-white);
 }
 
 #tab-buttons{
     width: 100vw;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin-bottom: 1%;
     background-color: var(--sub-black);
     color: var(--main-white);
-    text-align: center;
+    /* text-align: center;*/
 }
 
 .tab_item > input[type=radio]{
     display: none;
 }
 
+.tab_item {
+    padding: 0.2%;
+    display: inline-block;
+}
+
 .selected_tab{
     color: var(--sub-red) !important;
+    background-color: var(--sub2-black) !important;
+    font-weight: bolder;
 }
 
 
