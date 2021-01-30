@@ -24,21 +24,19 @@ class Popup{
 
         //閉じるボタンを作成
         this.popup.insertAdjacentHTML("beforeend", `<form><input type="button" value="閉じる"></form>`);
-        this.popup.addEventListener("click", this.close,false);
+        this.popup.addEventListener("click", () => this.close(this),false);
         //console.log(this.close);
     }
 
-    open(){
+    open(self=this){
         //console.log(this.layer);
-        this.layer.style.display = "block";
-        this.popup.style.display = "block";
+        self.layer.style.display = "block";
+        self.popup.style.display = "block";
     }
 
-    close(){
-        // イベントリスナーから呼び出すとここがundefinedになる
-        console.log(this.layer);
-        this.layer.style.display = "none";
-        this.popup.style.display = "none";
+    close(self=this){
+        self.layer.style.display = "none";
+        self.popup.style.display = "none";
     }
 }
 
