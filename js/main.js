@@ -7,9 +7,10 @@ window.addEventListener("resize", resize_editor, false);
 window.addEventListener("load", resize_editor, false);
 function resize_editor(){
     // 要素の取得
-    var header = document.getElementById("header");
-    var editor = document.getElementById("editor-" + current_tab);
-    var tabbar = document.getElementById("tab-buttons");
+    var header  = document.getElementById("header");
+    var editor  = document.getElementById("editor-" + current_tab);
+    var tabbar  = document.getElementById("tab-buttons");
+    var namebar = document.getElementById("editor-" + current_tab + "-name");
 
     // エディタに設定されているpaddingの値を取得
     //参考: https://javascript.programmer-reference.com/js-width-parseint/
@@ -19,15 +20,18 @@ function resize_editor(){
 
     //==============高さ==============\\
     // ヘッダーの高さ
-    var header_height = header.clientHeight;
+    var header_height  = header.clientHeight;
     // タブバーの高さ
-    var tabbar_height = tabbar.clientHeight;
+    var tabbar_height  = tabbar.clientHeight;
     // ウィンドウの高さ
-    var window_height = window.innerHeight;
+    var window_height  = window.innerHeight;
+    // ファイル名の高さ
+    var namebar_height = namebar.clientHeight;
+    console.log(namebar_height);
     // 追加の余白の高さ (ウィンドウの高さの10%)
     var additional_height = window_height * 0.1;
     // 高さを計算して確定
-    var editor_height = window_height - header_height - tabbar_height - additional_height - editor_padding * 2;
+    var editor_height = window_height - header_height - tabbar_height - additional_height - editor_padding * 2 - namebar_height;
     // 高さを設定
     editor.style.height = editor_height + "px";
 
