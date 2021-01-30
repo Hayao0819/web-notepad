@@ -142,3 +142,11 @@ function upload_file() {
 function delete_editor(){
     document.getElementById("editor-" + current_tab).value = null;
 }
+
+
+//指定回ぶんのタブを開く
+function open_tab(n){
+    for (var i= 1; i<=n; i++){
+        add_tab();
+    }
+}
