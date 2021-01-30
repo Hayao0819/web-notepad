@@ -28,6 +28,8 @@ function enable_tab(number) {
 
     // 設定値を更新
     current_tab = number;
+
+    // エディタサイズを更新
     resize_editor();
 }
 
