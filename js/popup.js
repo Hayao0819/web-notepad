@@ -20,14 +20,23 @@ class Popup{
         // popupの上にレイヤーを作成
         this.popup.insertAdjacentHTML("beforebegin", `<span class="layer" id="${id}-layer"></span>`);
         this.layer = document.getElementById(id + "-layer");
+        //console.log(this.popup.innerHTML);
+
+        //閉じるボタンを作成
+        this.popup.insertAdjacentHTML("beforeend", `<form><input type="button" value="閉じる"></form>`);
+        this.popup.addEventListener("click", this.close,false);
+        //console.log(this.close);
     }
 
     open(){
+        //console.log(this.layer);
         this.layer.style.display = "block";
         this.popup.style.display = "block";
     }
 
     close(){
+        // イベントリスナーから呼び出すとここがundefinedになる
+        console.log(this.layer);
         this.layer.style.display = "none";
         this.popup.style.display = "none";
     }
