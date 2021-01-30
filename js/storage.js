@@ -5,6 +5,7 @@ window.addEventListener("keyup", save_on_storage, false);
 function save_on_storage(){
     for (var editor = 1; editor <= editors; editor++){
         localStorage.setItem("editor-" + editor, document.getElementById("editor-" + editor).value);
+        localStorage.setItem("editor-" + editor + "-name", document.getElementById("editor-" + editor + "-name").value);
     }
     save_editor_number();
 }
@@ -35,6 +36,7 @@ function restore_storage() {
     for (var editor = 1; editor <= editors; editor++){
         // document.getElementById("editor-" + editor).value
         document.getElementById("editor-" + editor).value = localStorage.getItem("editor-" + editor);
+        document.getElementById("editor-" + editor + "-name").value = localStorage.getItem("editor-" + editor + "-name");
     }
 }
 
