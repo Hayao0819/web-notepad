@@ -31,6 +31,9 @@ function enable_tab(number) {
 
     // エディタサイズを更新
     resize_editor();
+
+    // CodeMirrorを更新
+    update_codemirror();
 }
 
 function add_tab() {

@@ -1,6 +1,8 @@
 // 変数の設定
 var current_tab = 1;
 var editors=1;
+var codemirror = false;
+//var codemirror = true;
 
 // エディタの高さを設定
 window.addEventListener("resize", resize_editor, false);
