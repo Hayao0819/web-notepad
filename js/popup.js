@@ -33,6 +33,6 @@ class Popup{
     }
 }
 
-about_hayao = new Popup("about-hayao");
+about_hayao = new Popup("about_hayao");
 usage = new Popup("usage");
 reset_confirm = new Popup("reset");
