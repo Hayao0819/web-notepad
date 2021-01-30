@@ -53,7 +53,7 @@
     width: 100%;
 }
 
-main{
+html{
     /* 背景を設定する */
     background-color: var(--editor-background);
 }
