@@ -20,6 +20,9 @@ header{
 .tab_item {
     padding: 0.2%;
     display: inline-block;
+
+    /* マウスの形状を変える*/
+    cursor: pointer;
 }
 
 .selected_tab{
