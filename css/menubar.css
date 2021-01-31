@@ -72,6 +72,9 @@ header{
 
     /* flexで右寄せ */
     margin-right: auto;
+
+    /* 選択を無効化 */
+    user-select: none;
 }
 
 .bar-item{
@@ -84,7 +87,10 @@ header{
 
 /* クリックされたときの色 */
 .bar-item:active{
+    /* 文字色を設定 */
     color: var(--main-red);
+
+    /* 選択を無効化 */
     user-select: none;
 }
 

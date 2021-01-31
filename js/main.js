@@ -1,6 +1,7 @@
 // 変数の設定
-var current_tab = 1;
-var editors=1;
+var current_tab = 1;  //現在のタブ
+var editors=1; //合計エディタ数
+var sp_width=900; // スマホのCSSを適用する横幅
 
 // エディタの高さを設定
 window.addEventListener("resize", resize_editor, false);
@@ -182,9 +183,8 @@ function save_other(){
 
 // スマホ用メニューを作成
 document.getElementById("bar-container").addEventListener("click",switch_sp_menu, false);
-
 function switch_sp_menu(){
-    if (document.getElementsByTagName("body")[0].clientWidth <= 900){
+    if (document.getElementsByTagName("body")[0].clientWidth <= sp_width){
         console.log("切り替え開始")
         Array.from(document.getElementsByClassName("bar-item")).forEach(function(_bar){
             // 現在開いてるならtrue
@@ -196,3 +196,12 @@ function switch_sp_menu(){
         })
     };
 }
+
+// ロゴを押したとき再読込
+Array.from(document.getElementsByClassName("bar-logo")).forEach(function(e){
+    e.addEventListener("click", function(){
+        if (document.getElementsByTagName("body")[0].clientWidth > sp_width){
+            location.reload();
+        }
+    });
+})
