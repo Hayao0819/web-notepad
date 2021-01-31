@@ -119,12 +119,17 @@ input[type="button"]:active{
 }
 
 
-/* ボタンを最下部に固定する */
-/*
-.popup-container{
-    
-}
-.close_button{
+/* スマホ用 */
+@media screen and (max-width: 900px) {
+    .popup {
+        /* 幅と高さを設定 */
+        width: 95%;
+        height: 95%;
 
+        /* 角を丸くする */
+        border-radius: 20px;
+    
+        /* 行間 */
+        line-height: 250%;
+    }
 }
-*/
