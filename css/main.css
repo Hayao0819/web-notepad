@@ -97,3 +97,26 @@ html{
     /* 文字サイズを指定 */
     font-size: 1em;
 }
+
+
+/* 文字コード選択 */
+select{
+    /* 背景色設定 */
+    background-color: var(--sub-black);
+
+    /* 影をなくす */
+    box-shadow: none;
+
+    /* 枠線をなくす */
+    border-style: none;
+    outline: none;
+
+    /* 文字色を設定 */
+    color: var(--main-white);
+
+    /* 余白を設定 */
+    padding: 0.5%;
+
+    /*カーソルを変更*/
+    cursor: pointer;
+}
