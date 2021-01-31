@@ -178,3 +178,23 @@ function save_other(){
         save.open();
     }
 }
+
+
+// スマホ用メニューを作成
+document.getElementById("bar-container").addEventListener("click",switch_sp_menu, false);
+
+function switch_sp_menu(){
+    if (document.getElementsByTagName("body")[0].clientWidth <= 900){
+        console.log("切り替え開始")
+        Array.from(document.getElementsByClassName("bar-item")).forEach(function(_bar){
+            // 現在開いてるならtrue
+            if(_bar.classList.contains("show-menu")){
+                _bar.classList.remove("show-menu");
+            }else{
+                _bar.classList.add("show-menu");
+            }
+        })
+    }else{
+        location.reload();
+    }
+}
