@@ -97,50 +97,65 @@
     <span id="save" class="popup" data-funcname="save">
         <h1>保存</h1>
         <style>
-            .save_item:not(input[type="button"]){
-                min-width: 50%;
+            .save_item{
                 display: flex;
-                line-height: 150%;
-                margin-bottom: 5%;
+                max-height: 100%;
+                margin-top: 1em;
             }
-            .save_item > h2 {
+
+            .save_item > P{
+                
+                margin-left: 2%;
+            }
+
+            .save_button{
+                /* 横幅を指定 */
                 width: 40%;
-            }
 
-            .save_item > p {
-                width: 35%;
-            }
+                /* 背景色を設定 */
+                background-color: var(--sub2-black);
 
-            .save_container{
-                margin-top: 3%;
+                /* 手キストを左右中央揃え */
                 text-align: center;
+
+                /* テキストを上下中央揃え */
+                line-height: 100px;
+
+                /* マウスカーソルを変更 */
+                cursor: pointer;
+            }
+
+            /* マウスが触れたとき */
+            .save_button:hover{
+                opacity: 0.8;
+            }
+
+            /* マウスが押されたとき */
+            .save_button:active{
+                transform: translate(0,2px);
+                border-bottom: none;
             }
 
         </style>
         <div class="save_container">
             <div class="save_item">
-                <h2>ダウンロード</h2>
+                <p class="save_button" onclick="save_to_txt()">ダウンロード</p>
                 <p>そのままプレーンテキストをダウンロード</p>
-                <input type="button" value="ダウンロード" onclick="save_to_txt()">
             </div>
             <div class="save_item">
-                <h2>DropBox</h2>
+                <p class="save_button" onclick="Unimplemented()">DropBox</p>
                 <p>天下のM$様のサーバのディスクに保存します</p>
-                <input type="button" value="保存" onclick="Unimplemented()">
             </div>
             <div class="save_item">
-                <h2>Twitter</h2>
+                <p class="save_button" onclick="Unimplemented()">Twitter</p>
                 <p>ツイ廃ならメモをツイートしたほうが速いのでは</p>
-                <input type="button" value="ツイート" onclick="Unimplemented()">
             </div>
             <div class="save_item">
-                <h2>ローカルストレージ</h2>
+                <p class="save_button" onclick="save_on_storage()">ローカルストレージ</p>
                 <p>
                     HTML5のlocalStorage機能を利用して保存します<br>
                     まぁ自動で保存されてるのでわざわざここ押さなくても大丈夫
                 </p>
-                
-                <input type="button" value="保存" onclick="save_on_storage()">
             </div>
         </div>
     </span>
