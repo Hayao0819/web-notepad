@@ -81,7 +81,7 @@ input[type="button"]{
     color: var(--main-white);
 
     /* 余白を設定 */
-    padding: 2%;
+    padding: 15px;
     font-size: 0.8em;
 
     /* 中央に配置 */
