@@ -194,7 +194,5 @@ function switch_sp_menu(){
                 _bar.classList.add("show-menu");
             }
         })
-    }else{
-        location.reload();
-    }
+    };
 }
