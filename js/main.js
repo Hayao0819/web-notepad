@@ -2,6 +2,7 @@
 var current_tab = 1;  //現在のタブ
 var editors=1; //合計エディタ数
 var sp_width=900; // スマホのCSSを適用する横幅
+var encoding_list=["utf-8","shift-jis","unicode"]; // 対応文字コード
 
 // エディタの高さを設定
 window.addEventListener("resize", resize_editor, false);
@@ -139,6 +140,9 @@ function upload_file() {
             // ファイル名をエディターに反映
             document.getElementById(`editor-${current_tab}-name`).value = filename;
         }
+
+        // 内容をストレージに保存
+        save_on_storage();
     }, false);
 }
 
@@ -158,13 +162,19 @@ function open_tab(n){
 
 // 文字コード一覧を生成
 window.addEventListener("load",create_encode_list,false);
-encoding_list=["utf-8","shift-jis","unicode"];
 function create_encode_list() {
     selectlist = Array.from(document.getElementsByClassName("encoding"));
     selectlist.forEach(function(_select){
-        encoding_list.forEach(function(_encoding){
-            _select.insertAdjacentHTML("beforeend",`<option value="${_encoding}">${_encoding}</option>`);
-        });
+
+        // 文字コードの一覧を生成
+        if (_select.innerHTML == ""){ //文字コード一覧が空の場合のみ
+            encoding_list.forEach(function(_encoding){
+                _select.insertAdjacentHTML("beforeend",`<option value="${_encoding}">${_encoding}</option>`);
+            });
+        }
+
+        // 文字コードが変更されたときアップロードダイアログを開く
+        _select.addEventListener("change", upload_file);
     });
 }
 
@@ -185,7 +195,7 @@ function save_other(){
 document.getElementById("bar-container").addEventListener("click",switch_sp_menu, false);
 function switch_sp_menu(){
     if (document.getElementsByTagName("body")[0].clientWidth <= sp_width){
-        console.log("切り替え開始")
+        //console.log("切り替え開始")
         Array.from(document.getElementsByClassName("bar-item")).forEach(function(_bar){
             // 現在開いてるならtrue
             if(_bar.classList.contains("show-menu")){

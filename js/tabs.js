@@ -62,6 +62,9 @@ function add_tab() {
     //タブ数保存
     save_editor_number();
 
+    // 文字コードリストを更新
+    create_encode_list();
+
     // エディタを更新
     update_editors();
 }
