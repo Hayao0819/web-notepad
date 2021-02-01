@@ -65,10 +65,17 @@
     <!-- ポップアップ参考: http://jstech.web.fc2.com/html0002/index.html -->
     <!-- 作者についてのポップアップ -->
     <span id="about_hayao" class="popup" data-funcname="about_hayao" style="text-align: center;">
+        <script>
+            function open_twitter(){
+                window.open('https://twitter.com/Hayao0819')
+            }
+        </script>
         <h1>山田ハヤオ</h1>
         <p>最近HTMLとJSとCSSを勉強し始めた高校生</p>
         <p>基本的にツイ廃でArch Linuxが大好き</p>
-        <p><a href="https://twitter.com/Hayao0819" style="color: var(--main-white);">作者のツイッター</a></p>
+        <p>
+            <input type="button" value="作者のツイッター" onclick="open_twitter()">
+        </p>
     </span>
 
     <!-- 使い方のポップアップ -->
