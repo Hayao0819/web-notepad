@@ -127,9 +127,11 @@ header{
     }
 
     /* 説明を消す */
+    /*
     .description{
         display: none;
     }
+    */
 
     /* ロゴがクリックされたときに追加されるclass */
     .show-menu{

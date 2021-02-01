@@ -46,7 +46,7 @@
     overflow: scroll;
 
     /* 行間 */
-    line-height: 350%;
+    line-height: 250%;
 
     /* 文字色 */
     color: var(--main-white);
@@ -106,7 +106,7 @@ input[type="button"]:active{
 /* ポップアップ内のタイトル */
 .popup-container > h1{
     /* 上部に余白を設定 */
-    margin-top: 5%;
+    margin-top: 2%;
 
     /* 背景色を設定 */
     background-color: var(--sub2-black);
