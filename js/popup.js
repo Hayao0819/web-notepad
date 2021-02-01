@@ -66,3 +66,35 @@ window.addEventListener("load",function(){
     save.open();
 });
 */
+
+
+// URLにポップアップが指定されていたら自動で開く
+// 参考: https://gray-code.com/javascript/get-parameter-of-url/
+window.addEventListener("load", function(){
+    // URLを取得
+    var url = new URL(window.location.href);
+    var params = url.searchParams;
+
+    // ?popup= で指定されている値を取得
+    var popup_name = params.get("popup");
+    var funcname = `${popup_name}.open`;
+
+    // ?popupが空なら終了
+    if (! popup_list){
+        return;
+    }
+
+    // ?popup= で指定されているポップアップが存在していたら開く
+    if(typeof [funcname] != undefined && typeof [funcname] == "object" ){
+        eval(`${funcname}()`);
+    }
+
+    //閉じるボタンを押されたときにパラメータを消す
+    /*
+    Array.from(document.getElementsByClassName("close_button")).forEach(function(button){
+        button.addEventListener("click",function(){
+            // GETを削除する処理（あとで書く）
+        })
+    })
+    */
+});
