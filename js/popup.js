@@ -80,7 +80,7 @@ window.addEventListener("load", function(){
     var funcname = `${popup_name}.open`;
 
     // ?popupが空なら終了
-    if (! popup_list){
+    if (! popup_name){
         return;
     }
 
