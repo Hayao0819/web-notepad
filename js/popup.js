@@ -1,14 +1,3 @@
-// はやおについて
-/*
-function about_hayao(){
-    var layer = document.getElementById("about-hayao-layer");
-    var popup = document.getElementById("about-hayao-popup")
-
-    layer.style.display = "block";
-    popup.style.display = "block";
-}
-*/
-
 class Popup{
     constructor(id){
         //id: ポップアップにするHTML
@@ -47,9 +36,8 @@ class Popup{
     }
 }
 
-//about_hayao = new Popup("about_hayao");
-//usage = new Popup("usage");
-//reset_confirm = new Popup("reset");
+
+// popupクラス全てをもとにPopupを作成
 window.addEventListener("load", generate_popup,false);
 function generate_popup() {
     popup_list = Array.from(document.getElementsByClassName("popup"));
@@ -60,12 +48,6 @@ function generate_popup() {
 
     });
 }
-
-/*
-window.addEventListener("load",function(){
-    save.open();
-});
-*/
 
 
 // URLにポップアップが指定されていたら自動で開く
