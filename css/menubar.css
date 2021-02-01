@@ -63,6 +63,9 @@ header{
 .description{
     /* 左に空白を作る */
     padding-left: 2%;
+
+    /* 上に空白を作る */
+    margin-top: 1%;
 }
 
 .bar-logo{
